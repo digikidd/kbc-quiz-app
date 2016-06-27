@@ -1,0 +1,162 @@
+
+body, html {
+    font-family: 'Roboto', sans-serif;
+}
+
+.jumbotron {
+    margin-top: 5px;
+    background-color: #4285f4;
+    box-shadow: 0 10px 20px rgba(0,0,0,0.19), 0 6px 6px rgba(0,0,0,0.23);
+}
+
+.jumbotron h1{
+    text-align: center;
+}
+
+ul {
+    list-style: none;
+}
+
+#btn-wrapper {
+    float: right;
+    margin-right: 200px;
+    margin-bottom: 100px;
+}
+
+#name-container {
+    float: left;
+    margin-left: 200px;
+}
+
+.rules-modal-lg, .load-modal-lg {
+    font-size: 21px;
+    font-weight: 300;
+}
+
+.rules-modal-lg p {
+    text-align: center;
+    font-weight: bold;
+}
+
+.modal-content {
+    background-color: springgreen;
+    padding-left: 2%;
+}
+
+.load-modal-lg p {
+    text-align: center;
+}
+
+#player-name {
+    font-weight: 500;
+}
+
+#gameboard {
+    background-color: #4285f4;
+    margin:0 auto;
+    padding-bottom: 60px;
+    max-width: 600px;
+    border-radius: 2%;
+    color: #fff;
+    text-align: center;
+    box-shadow: 0 10px 20px rgba(0,0,0,0.19), 0 6px 6px rgba(0,0,0,0.23);
+}
+
+#question {
+    color: springgreen;
+}
+
+#question-area {
+    padding 6px;
+}
+#answers {
+    font-size: 28px;
+    font-weight: 7600;
+    font-style: italic;
+    border-top: .2px solid #122b40;
+    /*border-bottom: .2px solid #122b40;*/
+    padding: 20px;
+}
+
+#answers li {
+    padding: 10px 0 0 0;
+    font-size: 16px;
+}
+
+#answers li:hover {
+    cursor: pointer;
+    color: springgreen;
+}
+
+#answers {
+    padding: 0px 0 10px 0px;
+}
+
+#answers li {
+    width: 50%;
+    margin: 0 auto;
+    padding-bottom: 15px;
+    border-top: .2% #000000;
+}
+
+#gameboard p {
+    font-size: 21px;
+    font-weight: 200;
+}
+
+#player-name {
+    font-size: 28px;
+    font-weight: 400;
+}
+
+#user-name {
+    font-size: 18px;
+    font-weight: 200;
+}
+
+#question {
+    padding-top: .5%;
+}
+
+#right-answer {
+    color: #00E676;
+}
+
+#wrong-answer {
+    color: #a21318;
+}
+
+#out-of-time {
+    color: #a21318;
+    font-size: 26px;
+    font-weight: 700;
+}
+
+#footer {
+    margin-top: 12%;
+    text-align: center;
+    font-weight: 500;
+    font-size: 9px;
+}
+
+#name-container {
+    vertical-align: top;
+}
+
+#next-container p:hover {
+    cursor: pointer;
+    color: springgreen;
+}
+
+#reset-game:hover {
+    cursor: pointer;
+    color: #b2ff59;
+}
+
+#final-right {
+    color: springgreen;
+}
+
+#final-wrong {
+    color: #a21318;
+}

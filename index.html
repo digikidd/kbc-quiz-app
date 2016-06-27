@@ -2,9 +2,120 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Title</title>
+    <meta name="viewport" content="width=device-width">
+    <link href='https://fonts.googleapis.com/css?family=Roboto:400,700,300' rel='stylesheet' type='text/css'>
+    <!-- Latest compiled and minified CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css"
+          integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
+
+    <!-- Optional theme -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap-theme.min.css"
+          integrity="sha384-fLW2N01lMqjakBkx3l/M9EahuwpSfeNvV63J5ezn3uZzapT0u7EYsXMjQV+0En5r" crossorigin="anonymous">
+    <link rel="stylesheet" href="css/quiz-styles.css">
+    <title>Music IQ Game</title>
 </head>
 <body>
+<div class="container">
+    <div class="jumbotron">
+        <h1>MUSIC IQ App</h1>
+        <p>Music IQ is an app that displays 10 random music questions. The questions can vary from types of instruments
+            to artist details. You will have 15 seconds to answer each question and if the time runs out, the question
+            will be counted wrong.</p>
+        <p>Good Luck!</p>
+    </div>
+</div>
+<section id="rules">
+    <div id="btn-wrapper">
+        <button type="button" id="rules-btn" class="btn btn-info btn-sm" data-toggle="modal"
+                data-target=".rules-modal-sm">
+            click for the rules
+        </button>
+    </div>
 
+    <div class="modal fade rules-modal-lg" tabindex="-1" role="dialog">
+        <div class="modal-dialog modal-lg">
+            <div class="modal-content">
+                <p>Music IQ Rules:</p>
+                <ul>
+                    <li>
+                        1. Use your grey matter to answer the questions!
+                    </li>
+                    <li>
+                        2. You will be given 10 random questions that are related to music. They can be anything from
+                        questions about musical instruments to the color of a particular artists' hair!
+                    </li>
+                    <li>
+                        3. You will have 15 seconds to answer each question.
+                    </li>
+                    <li>
+                        4. When time runs out, the question will be counted incorrect.
+                    </li>
+                    <li>
+                        5. You will see your total score after you have answered 10 questions.
+                    </li>
+                    <li>
+                        6. Send in any question suggestions to: digikidd@gmail.com.
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</section>
+<section id="load-game">
+    <div id="name-container">
+        <input type="text" id="user-name" placeholder="enter your name...">
+        <button type="button" id="name-btn" class="btn btn-info btn-sm" data-toggle="modal" data-target=".load-modal-lg">
+            click to enter your name
+        </button>
+    </div>
+    <div class="modal fade load-modal-lg" id="load-modal" tabindex="-1" role="dialog">
+        <div class="modal-dialog modal-lg">
+            <div class="modal-content">
+                <p id="player-name"></p>
+                <br>
+                <p id="adding-elements"></p>
+                <p id="music-questions"></p>
+                <p id="musical-instruments"></p>
+                <p id="genres"></p>
+                <p id="songs"></p>
+                <p id="artists"></p>
+                <p id="starting"></p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section id="gameboard">
+
+    <div class="qanda" id="question-area">
+        <p id="question"></p>
+        <ul class="qanda" id="answers">
+        </ul>
+        <p id="timer"></p>
+        <p id="out-of-time"></p>
+        <p id="right-answer"></p>
+        <p id="wrong-answer"></p>
+        <div id="next-container">
+            <p id="next-btn"></p>
+        </div>
+        <div id="final-div">
+            <p id="final-answer"></p>
+            <p id="final-right"></p>
+            <p id="final-wrong"></p>
+            <p id="reset-game"></p>
+        </div>
+
+    </div>
+</section>
+
+<footer id="footer">
+    <p>Developed by Kelly Carmichael</p>
+</footer>
+<!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+<!-- Include all compiled plugins (below), or include individual files as needed -->
+<script src="dist/js/bootstrap.min.js"></script>
+<script type="text/javascript" src="js/questions.js"></script>
+<script type="text/javascript" src="js/quizApp.js"></script>
 </body>
 </html>
