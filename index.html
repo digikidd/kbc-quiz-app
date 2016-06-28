@@ -21,7 +21,8 @@
         <p>Music IQ is an app that displays 10 random music questions. The questions can vary from types of instruments
             to artist details. You will have 15 seconds to answer each question and if the time runs out, the question
             will be counted wrong.</p>
-        <p id="info-btn" data-toggle="modal" data-target=".rules-modal-lg"><span class="glyphicon glyphicon-info-sign" aria-hidden="true"></span> game info
+        <p id="info-btn" data-toggle="modal" data-target=".rules-modal-lg"><span class="glyphicon glyphicon-info-sign"
+                                                                                 aria-hidden="true"></span> game info
         </p>
         <p>Good Luck!</p>
         <input type="text" id="user-name" placeholder="enter your name...">
@@ -59,6 +60,16 @@
         </div>
     </div>
 </section>
+<section id="correct">
+    <div class="modal fade correct-modal-lg" id="myModal" tabindex="-1" role="dialog">
+        <div class="modal-dialog modal-lg">
+            <div class="modal-content">
+                <p>You Got it right!!</p>
+                <p><img src="images/right.png"></p>
+            </div>
+        </div>
+    </div>
+</section>
 <section id="load-game">
     <div class="modal fade load-modal-lg" id="load-modal" tabindex="-1" role="dialog">
         <div class="modal-dialog modal-lg">
@@ -83,7 +94,7 @@
         <p id="question"></p>
         <ul class="qanda" id="answers">
         </ul>
-        <p id="timer"></p>
+        <p id="timer" value="0"></p>
         <p id="out-of-time"></p>
         <p id="right-answer"></p>
         <p id="wrong-answer"></p>
