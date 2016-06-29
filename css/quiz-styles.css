@@ -28,6 +28,19 @@ body, html {
     cursor: pointer;
 }
 
+#reset-btn {
+    background-color: #4e91fc;
+    float: right;
+    margin-right: -139px;
+    padding: 6px;
+    text-align: center;
+    font-weight: 400;
+    max-width: 200px;
+    box-shadow: 0 10px 20px rgba(0,0,0,0.19), 0 6px 6px rgba(0,0,0,0.23);
+    border-radius: 6px 6px 6px 6px;
+    cursor: pointer;
+}
+
 .its-right {
     margin-left: 325px;
     font-size: 26px;

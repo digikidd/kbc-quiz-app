@@ -2,7 +2,6 @@
  * Created by kellycarmichael on 6/18/16.
  */
 
-
 //**************************************************//
 // Global variables and objects instantiated here. //
 //************************************************//
@@ -188,7 +187,6 @@ function startTimer() {
     if (check == null){
         questionTimer = 0;
         check = setInterval(function () {
-
             ++questionTimer;
             if ( questionTimer > 9) {
                 document.getElementById ('timer').style.color = "yellow";
@@ -227,6 +225,7 @@ function stopTimer() {
 
 //This function is called after 10 questions have been answered and displays the final score for the user.
 function finalScore() {
+    stopTimer();
     document.getElementById("answers").innerHTML = "";
     document.getElementById('question').innerHTML = "";
     document.getElementById('wrong-answer').style.display = 'none';
@@ -245,4 +244,8 @@ document.getElementById('gameboard').style.display = 'none';
 document.getElementById('name-btn').addEventListener('click', function () {
     initialize();
     getName();
+});
+
+document.getElementById('reset-btn').addEventListener('click', function () {
+    window.location.reload();
 });
