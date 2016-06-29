@@ -73,9 +73,20 @@
 <section id="correct">
     <div class="modal fade correct-modal-lg" id="myModal" tabindex="-1" role="dialog">
         <div class="modal-dialog modal-lg">
-            <div class="modal-content">
-                <p>You Got it right!!</p>
-                <p><img src="images/right.png"></p>
+            <div class="modal-content" id="correct-modal">
+                <p class="its-right">you got it right!!</p>
+                <p class="right-wrong"><img src="images/right.png"></p>
+                <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+            </div>
+        </div>
+    </div>
+</section>
+<section id="incorrect">
+    <div class="modal fade incorrect-modal-lg" id="incModal" tabindex="-1" role="dialog">
+        <div class="modal-dialog modal-lg">
+            <div class="modal-content" id="incorrect-modal">
+                <p class="its-right">you got it wrong!</p>
+                <p class="right-wrong"><img src="images/wrong.png"></p>
                 <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
             </div>
         </div>
@@ -105,14 +116,15 @@
         <p id="question"></p>
         <ul class="qanda" id="answers">
         </ul>
-        <div>
+        <div id="timer-wrapper">
             <p id="text-timer"></p>
             <p id="timer" value="0"></p>
         </div>
-
-        <p id="out-of-time"></p>
-        <p id="right-answer"></p>
-        <p id="wrong-answer"></p>
+        <div id="wrapper">
+            <p id="out-of-time"></p>
+            <p id="right-answer"></p>
+            <p id="wrong-answer"></p>
+        </div>
         <div id="next-container">
             <p id="next-btn"></p>
         </div>

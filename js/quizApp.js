@@ -70,7 +70,6 @@ function initialize() {
     numberOfQuestions = 0;
     document.getElementById('out-of-time').style.display = 'none';
     document.getElementById('next-btn').style.display = 'none';
-    document.getElementById('next-btn').style.display = 'none';
 }
 
 //getting user name in this function and calling the loading game function. The text input and submit are also hidden in here.
@@ -151,6 +150,7 @@ function nextQuestion(answer) {
         ++rightAnswers;
         ++numberOfQuestions;
         $('#myModal').modal('show');
+        stopTimer();
         $('#myModal').on('hidden.bs.modal', function () {
             displayQuestion();
             pickAnswer();
@@ -158,17 +158,23 @@ function nextQuestion(answer) {
     }
     else if (answer != usrAnswer) {
         ++wrongAnswers;
-        document.getElementById('right-answer').style.display = 'none';
-        document.getElementById('wrong-answer').style.display = 'block';
-        document.getElementById('wrong-answer').innerHTML = "The correct answer is: " + question.options[answer];
-        document.getElementById('next-btn').style.display = 'block';
-        document.getElementById('next-btn').innerHTML = 'click to continue';
-        document.getElementById("answers").innerHTML = "";
-        document.getElementById('next-btn').addEventListener('click', function () {
-            displayQuestion();
-            pickAnswer();
-            document.getElementById('next-btn').style.display = 'none';
-            document.getElementById('wrong-answer').style.display = 'none';
+        stopTimer();
+        $('#incModal').modal('show');
+        $('#incModal').on('hidden.bs.modal', function () {
+            document.getElementById('timer-wrapper').style.display = 'none';
+            document.getElementById('right-answer').style.display = 'none';
+            document.getElementById('wrong-answer').style.display = 'block';
+            document.getElementById('wrong-answer').innerHTML = "The correct answer is: " + question.options[answer];
+            document.getElementById('next-btn').style.display = 'block';
+            document.getElementById('next-btn').innerHTML = 'click to continue';
+            document.getElementById("answers").innerHTML = "";
+            document.getElementById('next-btn').addEventListener('click', function () {
+                displayQuestion();
+                pickAnswer();
+                document.getElementById('timer-wrapper').style.display = 'block';
+                document.getElementById('next-btn').style.display = 'none';
+                document.getElementById('wrong-answer').style.display = 'none';
+            })
         })
     }
     //++numberOfQuestions;
@@ -197,7 +203,17 @@ function startTimer() {
             if (questionTimer === maxTime) {
                 stopTimer();
                 document.getElementById ('timer').style.color = "darkred";
-                console.log('foobar');
+                document.getElementById('out-of-time').style.display = 'block';
+                document.getElementById('out-of-time').innerHTML = "out of time!";
+                document.getElementById('next-btn').style.display = 'block';
+                document.getElementById('next-btn').innerHTML = 'click to continue';
+                document.getElementById('next-btn').addEventListener('click', function () {
+                    displayQuestion();
+                    pickAnswer();
+                    document.getElementById('timer-wrapper').style.display = 'block';
+                    document.getElementById('next-btn').style.display = 'none';
+                    document.getElementById('wrong-answer').style.display = 'none';
+                })
                 return false;
             }
         }, 1000);
@@ -215,11 +231,8 @@ function finalScore() {
     document.getElementById('question').innerHTML = "";
     document.getElementById('wrong-answer').style.display = 'none';
     document.getElementById('right-answer').style.display = 'none';
-    document.getElementById("answers").innerHTML = "";
-    document.getElementById('question').innerHTML = "";
     document.getElementById('final-answer').innerHTML = usrName + ", your final score:";
     document.getElementById('final-right').innerHTML = rightAnswers + " correct answers!";
-
     document.getElementById('final-wrong').innerHTML = wrongAnswers + " incorrect answers.";
     document.getElementById('reset-game').innerHTML = "click to reset game";
     document.getElementById('reset-game').addEventListener('click', function () {

@@ -28,6 +28,20 @@ body, html {
     cursor: pointer;
 }
 
+.its-right {
+    margin-left: 325px;
+    font-size: 26px;
+    color: black;
+}
+
+.right-wrong {
+    margin-left: 400px;
+}
+
+.btn {
+    margin-left: 392px;
+}
+
 #name-btn {
     background-color: #4e91fc;
     padding: 6px;
@@ -110,7 +124,6 @@ ul {
     padding: 0px 0 10px 0px;
 }
 
-
 #answers li:hover {
     cursor: pointer;
     color: springgreen;
@@ -140,15 +153,12 @@ ul {
 #user-name {
     border: 1px solid white;
     box-shadow: inset 0 0 8px  rgba(0,0,0,0.1),0 0 16px rgba(0,0,0,0.1);
-
     padding: 10px;
     background: rgba(255,255,255,.9);
     margin: 0 0 10px 0;
     font-size: 16px;
     font-weight: 200;
     margin-left: 400px;
-
-
 }
 
 #question {
@@ -163,10 +173,18 @@ ul {
     color: #a21318;
 }
 
-#out-of-time {
+#timer-wrapper {
+    margin: 0 auto;
+}
+
+#wrapper {
+    margin: 0 auto;
+}
+
+#wrapper p {
     color: #a21318;
-    font-size: 26px;
-    font-weight: 700;
+    font-size: 20px;
+    font-weight: 900;
 }
 
 #footer {
@@ -207,5 +225,6 @@ ul {
 
 #text-timer {
     float: left;
-    margin-left: 42%;
+    margin-left: 44%;
 }
+
