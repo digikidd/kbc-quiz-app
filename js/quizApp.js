@@ -15,6 +15,7 @@ var numberOfQuestions = 0;
 var question = null;
 var check = null;
 var maxTime = 15;
+var questionTimer = 0;
 
 //**********************************************//
 //   Functions Section                         //
@@ -57,7 +58,7 @@ function loadingGameIntro() {
                 startGame();
                 break;
         }
-    }, 1600)
+    }, 500)
 }
 
 //This resets globals and flags for new game.
@@ -84,7 +85,9 @@ function getName() {
 function startGame() {
     displayQuestion();
     pickAnswer();
-    startTimer();
+    if (startTimer() == false) {
+        console.log ('false');
+    }
 }
 
 //Randomly selects questions from the questions object.
@@ -99,6 +102,7 @@ var getRandomQuestion = function (questions) {
 
 //Include questions for quiz in here!!!
 function displayQuestion() {
+    startTimer();
     document.getElementById('timer').style.display = 'block';
     document.getElementById('out-of-time').style.display = 'none';
     document.getElementById('gameboard').style.display = 'block';
@@ -112,7 +116,7 @@ function displayQuestion() {
         LI.innerHTML = question.options[i];
         document.getElementById('answers').appendChild(LI);
     }
-    return true;
+   // return true;
 }
 
 //This function evaluates the click events when a question is displayed and a user chooses an answer.
@@ -135,16 +139,21 @@ function pickAnswer() {
     });
 }
 
+
+
 //This function shows a new question and tracks the number of right and wrong answers.
 function nextQuestion(answer) {
+
     if (numberOfQuestions === 10) {
         finalScore();
     }
     else if (answer === usrAnswer) {
         ++rightAnswers;
+        ++numberOfQuestions;
         $('#myModal').modal('show');
         $('#myModal').on('hidden.bs.modal', function () {
             displayQuestion();
+            pickAnswer();
         })
     }
     else if (answer != usrAnswer) {
@@ -157,11 +166,12 @@ function nextQuestion(answer) {
         document.getElementById("answers").innerHTML = "";
         document.getElementById('next-btn').addEventListener('click', function () {
             displayQuestion();
+            pickAnswer();
             document.getElementById('next-btn').style.display = 'none';
             document.getElementById('wrong-answer').style.display = 'none';
-        });
+        })
     }
-    ++numberOfQuestions;
+    //++numberOfQuestions;
     if (numberOfQuestions === 10) {
         document.getElementById('timer').style.display = 'none';
         finalScore();
@@ -170,11 +180,25 @@ function nextQuestion(answer) {
 
 function startTimer() {
     if (check == null){
-        var cnt = 0;
+        questionTimer = 0;
         check = setInterval(function () {
-            cnt += 1;
-            if (cnt === maxTime) {
+
+            ++questionTimer;
+            if ( questionTimer > 9) {
+                document.getElementById ('timer').style.color = "yellow";
+                document.getElementById ('text-timer').innerHTML = "time: ";
+                document.getElementById ('timer').innerHTML = "" + questionTimer;
+            }
+            else {
+                document.getElementById ('timer').style.color = "springgreen";
+                document.getElementById ('text-timer').innerHTML = "time: ";
+                document.getElementById ('timer').innerHTML = "0" + questionTimer;
+            }
+            if (questionTimer === maxTime) {
                 stopTimer();
+                document.getElementById ('timer').style.color = "darkred";
+                console.log('foobar');
+                return false;
             }
         }, 1000);
     }

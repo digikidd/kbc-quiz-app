@@ -17,17 +17,27 @@
 <body>
 <div class="container">
     <div class="jumbotron">
-        <h1>MUSIC IQ App</h1>
-        <p>Music IQ is an app that displays 10 random music questions. The questions can vary from types of instruments
-            to artist details. You will have 15 seconds to answer each question and if the time runs out, the question
-            will be counted wrong.</p>
-        <p id="info-btn" data-toggle="modal" data-target=".rules-modal-lg"><span class="glyphicon glyphicon-info-sign"
-                                                                                 aria-hidden="true"></span> game info
-        </p>
-        <p>Good Luck!</p>
-        <input type="text" id="user-name" placeholder="enter your name...">
-        <br>
-        <p id="name-btn" data-toggle="modal" data-target=".load-modal-lg">click to enter name</p>
+        <div>
+            <h1>MUSIC IQ App</h1>
+            <p>Music IQ is an app that displays 10 random music questions. The questions can vary from types of
+                instruments
+                to artist details. You will have 15 seconds to answer each question and if the time runs out, the
+                question
+                will be counted wrong.</p>
+        </div>
+        <div>
+            <p id="info-btn" data-toggle="modal" data-target=".rules-modal-lg"><span
+                    class="glyphicon glyphicon-info-sign"
+                    aria-hidden="true"></span> game info
+            </p>
+            <p>Good Luck!</p>
+        </div>
+
+        <div id="name-container">
+            <input type="text" id="user-name" placeholder="enter your name...">
+            <p id="name-btn" data-toggle="modal" data-target=".load-modal-lg">click to enter name</p>
+        </div>
+
     </div>
 </div>
 <section id="rules">
@@ -66,6 +76,7 @@
             <div class="modal-content">
                 <p>You Got it right!!</p>
                 <p><img src="images/right.png"></p>
+                <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
             </div>
         </div>
     </div>
@@ -94,7 +105,11 @@
         <p id="question"></p>
         <ul class="qanda" id="answers">
         </ul>
-        <p id="timer" value="0"></p>
+        <div>
+            <p id="text-timer"></p>
+            <p id="timer" value="0"></p>
+        </div>
+
         <p id="out-of-time"></p>
         <p id="right-answer"></p>
         <p id="wrong-answer"></p>
