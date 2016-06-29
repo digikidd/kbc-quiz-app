@@ -17,21 +17,33 @@
 <body>
 <div class="container">
     <div class="jumbotron">
-        <h1>MUSIC IQ App</h1>
-        <p>Music IQ is an app that displays 10 random music questions. The questions can vary from types of instruments
-            to artist details. You will have 15 seconds to answer each question and if the time runs out, the question
-            will be counted wrong.</p>
-        <p>Good Luck!</p>
+        <div>
+            <h1>MUSIC IQ App</h1>
+            <p>Music IQ is an app that displays 10 random music questions. The questions can vary from types of
+                instruments
+                to artist details. You will have 15 seconds to answer each question and if the time runs out, the
+                question
+                will be counted wrong.</p>
+        </div>
+        <div>
+            <p id="info-btn" data-toggle="modal" data-target=".rules-modal-lg"><span
+                    class="glyphicon glyphicon-info-sign"
+                    aria-hidden="true"></span> game info
+            </p>
+            <p>Good Luck!</p>
+            <p id="reset-btn"><span
+                    class="glyphicon glyphicon-alert"
+                    aria-hidden="true"></span> reset game</p>
+        </div>
+
+        <div id="name-container">
+            <input type="text" id="user-name" placeholder="enter your name...">
+            <p id="name-btn" data-toggle="modal" data-target=".load-modal-lg">click to enter name</p>
+        </div>
+
     </div>
 </div>
 <section id="rules">
-    <div id="btn-wrapper">
-        <button type="button" id="rules-btn" class="btn btn-info btn-sm" data-toggle="modal"
-                data-target=".rules-modal-lg">
-            click for the rules
-        </button>
-    </div>
-
     <div class="modal fade rules-modal-lg" tabindex="-1" role="dialog">
         <div class="modal-dialog modal-lg">
             <div class="modal-content">
@@ -61,13 +73,29 @@
         </div>
     </div>
 </section>
-<section id="load-game">
-    <div id="name-container">
-        <input type="text" id="user-name" placeholder="enter your name...">
-        <button type="button" id="name-btn" class="btn btn-info btn-sm" data-toggle="modal" data-target=".load-modal-lg">
-            click to enter your name
-        </button>
+<section id="correct">
+    <div class="modal fade correct-modal-lg" id="myModal" tabindex="-1" role="dialog">
+        <div class="modal-dialog modal-lg">
+            <div class="modal-content" id="correct-modal">
+                <p class="its-right">you got it right!!</p>
+                <p class="right-wrong"><img src="images/right.png"></p>
+                <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+            </div>
+        </div>
     </div>
+</section>
+<section id="incorrect">
+    <div class="modal fade incorrect-modal-lg" id="incModal" tabindex="-1" role="dialog">
+        <div class="modal-dialog modal-lg">
+            <div class="modal-content" id="incorrect-modal">
+                <p class="its-right">you got it wrong!</p>
+                <p class="right-wrong"><img src="images/wrong.png"></p>
+                <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+            </div>
+        </div>
+    </div>
+</section>
+<section id="load-game">
     <div class="modal fade load-modal-lg" id="load-modal" tabindex="-1" role="dialog">
         <div class="modal-dialog modal-lg">
             <div class="modal-content">
@@ -91,10 +119,15 @@
         <p id="question"></p>
         <ul class="qanda" id="answers">
         </ul>
-        <p id="timer"></p>
-        <p id="out-of-time"></p>
-        <p id="right-answer"></p>
-        <p id="wrong-answer"></p>
+        <div id="timer-wrapper">
+            <p id="text-timer"></p>
+            <p id="timer" value="0"></p>
+        </div>
+        <div id="wrapper">
+            <p id="out-of-time"></p>
+            <p id="right-answer"></p>
+            <p id="wrong-answer"></p>
+        </div>
         <div id="next-container">
             <p id="next-btn"></p>
         </div>
