@@ -1,7 +1,7 @@
 /**
  * Created by kellycarmichael on 6/19/16.
  */
-//List of questions and answers that will be pulled at random for each new quiz game.
+//List of 30 questions and answers that will be pulled at random for each new quiz game.
 var questions = [
     {
         musicQuestion: "Usher made two songs with two other rap artists. Who are they?",
@@ -281,6 +281,36 @@ var questions = [
             "TLC",
             "none of these"],
         answer: 2,
+        hasAppeared: false,
+    },
+    {
+        musicQuestion: "Which one of these songs are not on Pink's album Missundaztood?",
+        options: [
+            "Just Like A Pill",
+            "Get This Party Started",
+            "Family Picture",
+            "None of the Above"],
+        answer: 2,
+        hasAppeared: false,
+    },
+    {
+        musicQuestion: "Kelly Clarkson's debut song was.......?",
+        options: [
+            "Miss Understood",
+            "Miss Universe",
+            "Miss Understand",
+            "Miss Independent"],
+        answer: 3,
+        hasAppeared: false,
+    },
+    {
+        musicQuestion: "What male and female vocalists sing 'Candy Shop'?",
+        options: [
+            "One Dollar/50 Cent",
+            "50 Cent/Olivia",
+            "Nickleback/Penney",
+            "One Cent/Candy"],
+        answer: 1,
         hasAppeared: false,
     }
 ];
