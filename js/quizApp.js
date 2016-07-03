@@ -166,6 +166,7 @@ $ (document).ready (function () {
         }
         else if (answer != usrAnswer) {
             ++wrongAnswers;
+            ++numberOfQuestions;
             stopTimer ();
             $ ('#incorrectModal').modal ('show');
             $ ('#incorrectModal').one ('hidden.bs.modal', function () {
