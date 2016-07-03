@@ -26,8 +26,8 @@ $ (document).ready (function () {
 //function to display loading game info. this function will display user name and show some loading dialogue for interactive value.
     function loadingGameIntro () {
         var loadInterval = setInterval (function () {
-            document.getElementById ('player-name').innerHTML = 'Starting up the Music IQ app!!';
-            document.getElementById ('adding-elements').innerHTML = usrName + ' good luck to you and hold on a sec while the app finishes...';
+            document.getElementById ('player-name').innerHTML = 'Starting up the Music IQ QUIZ...';
+            document.getElementById ('adding-elements').innerHTML = usrName + ', good luck to you and hold on a sec while the app finishes...';
             ++counter;
             switch (counter) {
                 case 1:
@@ -35,19 +35,19 @@ $ (document).ready (function () {
                     break;
                 case 2:
                     document.getElementById ('music-questions').style.display = 'none';
-                    document.getElementById ('genres').innerHTML = "loading the genres.";
+                    document.getElementById ('genres').innerHTML = "...loading the genres.";
                     break;
                 case 3:
                     document.getElementById ('genres').style.display = 'none';
-                    document.getElementById ('songs').innerHTML = "loading the songs.";
+                    document.getElementById ('songs').innerHTML = "...loading the songs.";
                     break;
                 case 4:
                     document.getElementById ('songs').style.display = 'none';
-                    document.getElementById ('artists').innerHTML = "loading the artists.";
+                    document.getElementById ('artists').innerHTML = "...loading the artists.";
                     break;
                 case 5:
                     document.getElementById ('artists').style.display = 'none';
-                    document.getElementById ('musical-instruments').innerHTML = "loading musical instruments.";
+                    document.getElementById ('musical-instruments').innerHTML = "...loading musical instruments.";
                     document.getElementById ('musical-instruments').style.display = 'none';
                     document.getElementById ('player-name').style.display = 'none';
                     document.getElementById ('adding-elements').style.display = 'none';
@@ -60,7 +60,7 @@ $ (document).ready (function () {
                     startGame ();
                     break;
             }
-        }, 500)
+        }, 1200)
     }
 
 //This resets globals and flags for new game.
@@ -79,8 +79,8 @@ $ (document).ready (function () {
     function getName () {
         usrName = document.getElementById ('user-name').value;
         if (usrName == "") {
-            var idx = Math.floor(Math.random()*(10+1));
-            var tempName = ["50 Cent","Kelly Clarkson","Justin Bieber","Adam Levine","Eddie Van Halen","Thomas Rhett","Taylor Swift","George Strait","Snoop Dogg","Steven Tyler"];
+            var idx = Math.floor (Math.random () * (10 + 1));
+            var tempName = ["50 Cent", "Kelly Clarkson", "Justin Bieber", "Adam Levine", "Eddie Van Halen", "Thomas Rhett", "Taylor Swift", "George Strait", "Snoop Dogg", "Steven Tyler"];
             usrName = tempName[idx];
         }
         loadingGameIntro ();
@@ -252,7 +252,7 @@ $ (document).ready (function () {
         document.getElementById ('final-right').innerHTML = rightAnswers + " correct answers!";
         document.getElementById ('final-wrong').innerHTML = wrongAnswers + " incorrect answers.";
         if (rightAnswers > wrongAnswers) {
-            winnerWinner();
+            winnerWinner ();
         }
         document.getElementById ('reset-game').innerHTML = "click to reset game";
         document.getElementById ('reset-game').addEventListener ('click', function () {
@@ -262,12 +262,12 @@ $ (document).ready (function () {
 
     //function to add winner image to final score.
     function winnerWinner () {
-        var elem = document.createElement("img");
-        elem.setAttribute("src", "images/winner.png");
-        elem.setAttribute("height", "100");
-        elem.setAttribute("width", "100");
-        elem.setAttribute("alt", "Winner");
-        document.getElementById("winner-winner").appendChild(elem);
+        var elem = document.createElement ("img");
+        elem.setAttribute ("src", "images/winner.png");
+        elem.setAttribute ("height", "100");
+        elem.setAttribute ("width", "100");
+        elem.setAttribute ("alt", "Winner");
+        document.getElementById ("winner-winner").appendChild (elem);
     }
 
     document.getElementById ('gameboard').style.display = 'none';
