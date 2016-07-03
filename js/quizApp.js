@@ -60,7 +60,7 @@ $ (document).ready (function () {
                     startGame ();
                     break;
             }
-        }, 1200)
+        }, 900)
     }
 
 //This resets globals and flags for new game.
