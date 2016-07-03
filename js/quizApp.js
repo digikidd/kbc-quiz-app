@@ -205,7 +205,7 @@ $ (document).ready (function () {
             check = setInterval (function () {
                 ++questionTimer;
                 if (questionTimer > 9) {
-                    document.getElementById ('timer').style.color = "yellow";
+                    document.getElementById ('timer').style.color = "#A21318";
                     document.getElementById ('text-timer').innerHTML = "time: ";
                     document.getElementById ('timer').innerHTML = "" + questionTimer;
                 }
